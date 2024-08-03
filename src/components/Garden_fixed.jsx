@@ -11,21 +11,23 @@ import { useSelector, useDispatch } from "react-redux";
 export default function Garden_fixed() {
   //   const [allPlants, setAllPlants] = useState(Original_Plants);
   const [allContainers, setAllContainers] = useState(Original_Containers);
-  const [allPlants, setAllPlants] = useState([]);
+
   const allContainersExtended = allContainers?.map((container) => ({
     ...container,
     plant_pic: Math.floor(Math.random() * 10),
   }));
+
   const allRef = useSelector((state) => state.reference);
   const allPlantsBurnt2 = allRef.plantList;
-
   const allPlantsExtended2 = allPlantsBurnt2?.map((plant) => ({
     ...plant,
     in_garden: false,
     pic: Math.floor(Math.random() * 10),
   }));
+  const [allPlants, setAllPlants] = useState(allPlantsExtended2);
+
   //   setAllContainers(allContainersExtended);
-//   setAllPlants(allPlantsExtended2);
+  //   setAllPlants(allPlantsExtended2);
 
   console.log("ALL CONTAINERS" + allContainers);
 
@@ -65,7 +67,7 @@ export default function Garden_fixed() {
 
     // if (was_garden) {
     if (old_cont_id != 50) {
-      const updatedPlants2 = allPlants.map((plant) => {
+      const updatedPlants2 = allPlantsExtended2.map((plant) => {
         if (plant.id == plant_id) {
           return { ...plant, in_garden: false };
         } else {
@@ -74,7 +76,7 @@ export default function Garden_fixed() {
       });
       setAllPlants(updatedPlants2);
     } else {
-      const updatedPlants = allPlants.map((plant) => {
+      const updatedPlants = allPlantsExtended2.map((plant) => {
         if (plant.id == plant_id) {
           return { ...plant, in_garden: true };
         } else {
