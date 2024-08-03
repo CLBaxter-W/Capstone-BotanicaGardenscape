@@ -15,13 +15,13 @@ import { Draggable } from "./Draggable";
 
 import { useSelector, useDispatch } from "react-redux";
 
-export default function Plants_fixed() {
+export default function Plants_fixed({ allPlants, setAllPlants }) {
   let isLoading = true;
   loadReference();
 
   const allRef = useSelector((state) => state.reference);
   const cv = useSelector((state) => state.currentView);
-  const allPlants = useSelector((state) => state.reference.plantList);
+  // const allPlants = useSelector((state) => state.reference.plantList);
   const allZones = allRef.zoneList;
   const allSuns = allRef.sunRequirementList;
   const allH2O = allRef.waterRequirementList;
@@ -30,12 +30,16 @@ export default function Plants_fixed() {
 
   // map allPlants and add a field to each obj
   const allPlantsBurnt = allRef.plantList;
+
   const allPlantsExtended = allPlantsBurnt?.map((plant) => ({
     ...plant,
     in_garden: false,
     pic: Math.floor(Math.random() * 10),
   }));
 
+ // setAllPlants(allPlantsExtended);
+
+  const allPlants2 = useState(allPlantsExtended);
   console.log("allPlantsExtended " + allPlantsExtended);
 
   let newCV = [];
@@ -52,9 +56,9 @@ export default function Plants_fixed() {
     return Loading_Bar();
   }
 
-  if (allPlants?.length == 0) {
-    return <div>No plants found.</div>;
-  }
+  // if (allPlants?.length == 0) {
+  //   return <div>No plants found.</div>;
+  // }
 
   const updateCurrentView = (e) => {
     // console.log("NAME: " + e.target.name);
@@ -319,7 +323,7 @@ export default function Plants_fixed() {
               name="s_zone"
             >
               <option key="0" className="dropdown-item" value="0" key2="0">
-              &#x1F321; Zone 
+                &#x1F321; Zone
               </option>
 
               {allZones?.map((zone) => {
@@ -330,7 +334,7 @@ export default function Plants_fixed() {
                     value={zone.id}
                     key2={zone.id}
                   >
-                     &#x1F321;{zone.zone_name}
+                    &#x1F321;{zone.zone_name}
                     {zone.temp_range}
                     {/* &#127811; */}
                   </option>
@@ -348,7 +352,7 @@ export default function Plants_fixed() {
               name="s_water"
             >
               <option key="0" className="dropdown-item" key2="0">
-              &#x1F4A7; Water 
+                &#x1F4A7; Water
               </option>
               {allH2O?.map((h2o) => {
                 return (
@@ -371,7 +375,7 @@ export default function Plants_fixed() {
               name="s_sun"
             >
               <option key="0" className="dropdown-item" key2="0">
-              &#9728; Sun {" "}
+                &#9728; Sun{" "}
               </option>
               {allSuns?.map((sun) => {
                 return (
@@ -391,7 +395,7 @@ export default function Plants_fixed() {
               name="s_soil"
             >
               <option key="0" key2="0" className="dropdown-item  ">
-              &#9968; Soil {" "}
+                &#9968; Soil{" "}
               </option>
               {allSoil?.map((soil) => {
                 return (

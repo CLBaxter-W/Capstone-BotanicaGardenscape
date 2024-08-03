@@ -7,23 +7,32 @@ import Original_Plants from "./Original_Plants";
 import Original_Containers from "./Original_Containers";
 import Plants_fixed from "./Plants_fixed";
 
-export default function Garden_fixed() {
-  const [allPlants, setAllPlants] = useState(Original_Plants);
+export default function Garden_fixed({ allPlants, setAllPlants }) {
+  //   const [allPlants, setAllPlants] = useState(Original_Plants);
   const [allContainers, setAllContainers] = useState(Original_Containers);
+  const allContainersExtended = allContainers?.map((container) => ({
+    ...container,
+    plant_pic: Math.floor(Math.random() * 10),
+  }));
+  //   setAllContainers(allContainersExtended);
+
   console.log("ALL PLANTS" + allPlants);
   console.log("ALL CONTAINERS" + allContainers);
 
   function handleDragEnd(event) {
     const plant_id = event.active.id;
     const new_cont_id = event.over?.id;
-    const new_all_containers = [...allContainers];
+    const new_all_containers = [...allContainersExtended];
 
     const old_cont_id = event.active.data.current.old_cont;
+
+    const result = allPlants.filter((plant) => plant.id == plant_id);
+    const plant_pic = result.pic;
 
     const new_cont_obj = {
       id: new_cont_id,
       plant_id: plant_id,
-      plant_pic: plant_id,
+      plant_pic: plant_pic,
       occupied: true,
     };
 
@@ -68,10 +77,10 @@ export default function Garden_fixed() {
   }
 
   function DraggableMarkup({ pic, plant_id, old_cont }) {
-    const path = "./src/assets/" + pic + ".png";
+    const path = "./src/assets/pictures/" + pic + ".png";
     return (
-      <Draggable id={plant_id} old_cont={old_cont}>
-        <img src={path} />{" "}
+      <Draggable id={plant_id} old_cont={old_cont} >
+        <img src={path} className="img-m"/>{" "}
       </Draggable>
     );
   }
@@ -121,7 +130,7 @@ export default function Garden_fixed() {
               {/* column 2 */}
               <div className="  p-2 text-light  shape ">
                 <div className="mainContainer">
-                  {allContainers.map((container) => (
+                  {allContainersExtended.map((container) => (
                     <GetDroppable key={container.id} container={container} />
                   ))}
                 </div>
@@ -130,7 +139,7 @@ export default function Garden_fixed() {
             <div className="col-3 ">
               {" "}
               {/* column 3 */}
-              <Plants_fixed />
+              <Plants_fixed allPlants={allPlants} setAllPlants={setAllPlants} />
             </div>
             {/*closes row */}
           </div>

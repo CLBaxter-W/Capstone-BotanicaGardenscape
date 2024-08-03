@@ -321,10 +321,10 @@ input,
   z-index: 100 !important;
 }
 
-.border-dashed{
+.border-dashed {
   border-style: dashed !important;
 }
 
 .rc > img {
-  width:40% !important;
+  width: 40% !important;
 }

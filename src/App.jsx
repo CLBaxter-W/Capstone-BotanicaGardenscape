@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import store from "./app/store.js";
 import { Provider } from "react-redux";
@@ -12,6 +13,7 @@ import Nav_Bar from "./components/Nav_Bar.jsx";
 import Garden_fixed from "./components/Garden_fixed.jsx";
 
 function App() {
+  const [allPlants, setAllPlants] = useState([]);
   return (
     <Provider store={store}>
       <div>
@@ -27,7 +29,12 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/registration" element={<Registration />}></Route>
-          <Route path="/gf" element={<Garden_fixed />}></Route>
+          <Route
+            path="/gf"
+            element={
+              <Garden_fixed allPlants={allPlants} setAllPlants={setAllPlants} />
+            }
+          ></Route>
         </Routes>
       </div>
     </Provider>
