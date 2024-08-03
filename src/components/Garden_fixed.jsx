@@ -7,7 +7,7 @@ import Original_Plants from "./Original_Plants";
 import Original_Containers from "./Original_Containers";
 import Plants_fixed from "./Plants_fixed";
 
-export default function Garden_fixed({ allPlants, setAllPlants }) {
+export default function Garden_fixed() {
   //   const [allPlants, setAllPlants] = useState(Original_Plants);
   const [allContainers, setAllContainers] = useState(Original_Containers);
   const allContainersExtended = allContainers?.map((container) => ({
@@ -79,8 +79,8 @@ export default function Garden_fixed({ allPlants, setAllPlants }) {
   function DraggableMarkup({ pic, plant_id, old_cont }) {
     const path = "./src/assets/pictures/" + pic + ".png";
     return (
-      <Draggable id={plant_id} old_cont={old_cont} >
-        <img src={path} className="img-m"/>{" "}
+      <Draggable id={plant_id} old_cont={old_cont}>
+        <img src={path} className="img-m" />{" "}
       </Draggable>
     );
   }
@@ -139,7 +139,7 @@ export default function Garden_fixed({ allPlants, setAllPlants }) {
             <div className="col-3 ">
               {" "}
               {/* column 3 */}
-              <Plants_fixed allPlants={allPlants} setAllPlants={setAllPlants} />
+              <Plants_fixed />
             </div>
             {/*closes row */}
           </div>

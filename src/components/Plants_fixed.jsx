@@ -15,7 +15,7 @@ import { Draggable } from "./Draggable";
 
 import { useSelector, useDispatch } from "react-redux";
 
-export default function Plants_fixed({ allPlants, setAllPlants }) {
+export default function Plants_fixed() {
   let isLoading = true;
   loadReference();
 
@@ -37,7 +37,7 @@ export default function Plants_fixed({ allPlants, setAllPlants }) {
     pic: Math.floor(Math.random() * 10),
   }));
 
- // setAllPlants(allPlantsExtended);
+  // setAllPlants(allPlantsExtended);
 
   const allPlants2 = useState(allPlantsExtended);
   console.log("allPlantsExtended " + allPlantsExtended);
