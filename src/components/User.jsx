@@ -18,12 +18,12 @@ export default function User() {
   const user = useSelector((state) => {
     return state.user.user;
   });
- 
+
   // Get the reference list for Zone
   const zoneList = useSelector((state) => {
     return state.reference.zoneList;
   });
- 
+
   // set up the relationship to the user mutation
   const [updateUser] = useUpdateUserMutation();
 
@@ -87,7 +87,7 @@ export default function User() {
                       <div className="row gap-3">
                         <input
                           type="email"
-                          className="form-control"
+                          className="form-control text_input"
                           name="email"
                           aria-describedby="emailHelp"
                           placeholder="Email"
@@ -98,7 +98,7 @@ export default function User() {
                         />
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control text_input"
                           name="firstname"
                           placeholder="First Name"
                           onChange={updateForm}
@@ -108,7 +108,7 @@ export default function User() {
 
                         <input
                           type="phone"
-                          className="form-control"
+                          className="form-control text_input"
                           name="phone_number"
                           placeholder="(XXX) 867-5209"
                           onChange={updateForm}
@@ -118,7 +118,7 @@ export default function User() {
 
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control text_input"
                           name="lastname"
                           placeholder="Last Name"
                           value={form.lastname}

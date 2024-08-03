@@ -65,31 +65,39 @@ export default function Registration() {
 
       success = await registerUser(form).unwrap();
       console.log("registration success REGISTERUSER: ", success);
+      if (success?.token) {
+        loginSuccess = await loginUser(form).unwrap();
+        console.log("registration loginSuccess LOGINUSER:", loginSuccess);
 
-      loginSuccess = await loginUser(form).unwrap();
-      console.log("registration loginSuccess LOGINUSER:", loginSuccess);
+        // TODO Handle failed registration better
+        // TODO Handle failed login better
+        // TODO Handle failed create garden better
+        // test if we got the token back from registration
 
-      // TODO Handle failed registration better
-      // TODO Handle failed login better
-      // TODO Handle failed create garden better
-      // test if we got the token back from registration
+        // NOTE- May figured out the timing problem here - Set the token because we have a timing issue
+        //window.sessionStorage.setItem("Token", loginSuccess.token);
+        const specifications = createDefaultGarden(loginSuccess.user);
 
-      // NOTE- May figured out the timing problem here - Set the token because we have a timing issue
-      //window.sessionStorage.setItem("Token", loginSuccess.token);
-      const specifications = createDefaultGarden(loginSuccess.user);
+        gardenSuccess = await createGarden({ specifications }).unwrap();
 
-      gardenSuccess = await createGarden({ specifications }).unwrap();
+        console.log("registration gardenSuccess CREATEGARDEN:", gardenSuccess);
 
-      console.log("registration gardenSuccess CREATEGARDEN:", gardenSuccess);
-
-      if (loginSuccess?.token) {
-        navigate("/garden");
+        if (loginSuccess?.token) {
+          navigate("/garden");
+        } else {
+          setErrM(
+            "There is a problem with your registration, please try again."
+          );
+        }
       } else {
-        setErrM("There is a problem with your registration, please try again.");
+        setErrM(
+          "There is a problem with your registration, please try again. If you already registered with this email, please login."
+        );
       }
     } catch (err) {
-      setErrM(err?.data?.message);
-      console.log(err);
+      setErrM(
+        "There is a problem with your registration, please try again. If you already registered with this email, please login."
+      );
     }
   };
 
@@ -126,7 +134,9 @@ export default function Registration() {
                           <div className="col-6 ">
                             <input
                               type="email"
+
                               className="form-control form-control-login"
+
                               name="email"
                               aria-describedby="emailHelp"
                               placeholder="Email"
@@ -135,7 +145,9 @@ export default function Registration() {
                             />
                             <input
                               type="text"
+
                               className="form-control form-control-login"
+
                               name="firstname"
                               placeholder="First Name"
                               onChange={updateForm}
@@ -144,7 +156,9 @@ export default function Registration() {
 
                             <input
                               type="phone"
+
                               className="form-control form-control-login"
+
                               name="phone_number"
                               placeholder="(XXX) 867-5209"
                               onChange={updateForm}
@@ -155,7 +169,9 @@ export default function Registration() {
                           <div className="col-6 ">
                             <input
                               type="password"
+
                               className="form-control form-control-login"
+
                               name="password"
                               placeholder="Password"
                               onChange={updateForm}
@@ -164,7 +180,9 @@ export default function Registration() {
 
                             <input
                               type="text"
+
                               className="form-control form-control-login"
+
                               name="lastname"
                               placeholder="Last Name"
                               onChange={updateForm}

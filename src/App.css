@@ -108,7 +108,9 @@ body {
   font-size: 0.9em;
 }
 .select-reference {
-  background-color: d8dbe2 !important;
+
+  background-color: #d8dbe2 !important;
+
 }
 
 .garden-select-reference {
@@ -118,9 +120,7 @@ body {
 }
 
 .text_input {
-  background-color: d8dbe2
- !important;
-  border: white !important;
 
-  
+  background-color: #d8dbe2 !important;
+
 }

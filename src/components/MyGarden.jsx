@@ -42,7 +42,7 @@ export default function MyGarden() {
   // set up the relationship to the garden mutation
   const [updateGarden] = useUpdateGardenMutation();
 
-  const [form, setForm] = useState(garden?.garden?.[0] || {});
+  const [form, setForm] = useState(garden?.garden?.[0]);
   const [errM, setErrM] = useState(null);
   const [successM, setSuccessM] = useState(null);
   useEffect(() => {

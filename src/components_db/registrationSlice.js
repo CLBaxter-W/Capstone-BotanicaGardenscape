@@ -32,7 +32,12 @@ const registrationSlice = createSlice({
       api.endpoints.registration.matchFulfilled,
       (state, { payload }) => {
         console.log("registration bob");
-        window.sessionStorage.setItem("Token", payload.token);
+        // window.sessionStorage.setItem(
+        //   "Token",
+        //   payload.token
+        //     ? payload.token
+        //     : window.sessionStorage.removeItem("Token")
+        // );
       }
     );
   },

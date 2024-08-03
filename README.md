@@ -2,9 +2,11 @@
 
 Garden Design Front End
 
+A home garden design app. The app will allow a user to create a garden and specify the growing conditions for that garden. With a layout tool, it will allow the user to add plants in a particular location in the garden.
+
 # project planning
 
-[https://github.com/users/Drewhastings123/projects/5](https://github.com/users/CLBaxter-W/projects/8)
+(https://github.com/users/CLBaxter-W/projects/8)
 
 # setup project
 
