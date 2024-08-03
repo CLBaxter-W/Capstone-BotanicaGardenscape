@@ -35,7 +35,7 @@ export default function GardenPlants() {
   }
   const gardenPlantName = plantList
     ? plantList.filter((obj) => {
-        if (obj.id === data.plantInfo?.[0].plant_id) return obj;
+        if (obj.id === data?.plantInfo?.[0]?.plant_id) return obj;
       })
     : [{ plant_name: "no name yet" }];
 
