@@ -408,7 +408,8 @@ export default function Plants_fixed() {
           </div>
         </div>
       </div>
-      <div className="table-responsive  ">
+      {/* <div className="table-responsive  "> */}
+      <div>
         <Plant_List />
       </div>
     </>
