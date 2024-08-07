@@ -290,7 +290,7 @@ export default function Garden_model() {
         <Draggable id={plant_id} old_cont={old_cont}>
           <div className="dragInGarden">
             <p>{plant_name}</p>
-            <img src={path} />
+            <img src={path} className="plant_small" />
           </div>{" "}
         </Draggable>
       </>
@@ -466,23 +466,20 @@ export default function Garden_model() {
           (container) => container.id == new_cont_id
         );
         allContainers_temp[containerIndexN] = movedObj;
+        // dispatch(setAllContainers(allContainers_temp));
+
+        //   b. remove plant from old container(set to vacancy: true and plant_id: null)
+
+        const containerIndexO = allContainers_temp.findIndex(
+          (container) => container.id == old_cont_id
+        );
+        allContainers_temp[containerIndexO] = old_cont_obj;
         dispatch(setAllContainers(allContainers_temp));
-
-        // b. remove plant from old container(set to vacancy: true and plant_id: null)
-        // const allContainers_temp2 = [...allContainers];
-        // const containerIndexO = allContainers_temp2.findIndex(
-        //   (container) => container.id == old_cont_id
-        // );
-        // allContainers_temp2[containerIndexO] = old_cont_obj;
-        // dispatch(setAllContainers(allContainers_temp2));
-        // console.log("after empty last cont" + allContainers);
-        
-
-        
+        console.log("after empty last cont" + allContainers);
       }
     }
   }
-
+  const sep = " , ";
   return (
     <div className="frame">
       <DndContext onDragEnd={handleDragEnd}>
@@ -492,7 +489,13 @@ export default function Garden_model() {
             <span className="text-info sl tik">
               {/* {if (plantsInGarden.length == 0)(<div>no hay plantas</div>)} */}
               {plantsInGarden?.map((plant) => {
-                return <div key={plant.id}>{plant.name}, </div>;
+                return (
+                  <div key={plant.id}>
+                    {" "}
+                    {plant.name}
+                    {sep}{" "}
+                  </div>
+                );
               })}
             </span>
           </small>
