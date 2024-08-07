@@ -1,0 +1,403 @@
+/* .plant {
+  padding: 2em;
+  margin: 1em;
+} */
+
+.frame {
+  padding: 0em 2em !important;
+}
+.aife {
+  align-items: flex-end !important;
+}
+.plant_box {
+  display: flex;
+
+  justify-content: space-between;
+  border-radius: 0.5em;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  color: #62c462;
+  font-size: 1.8em;
+  padding-left: 2em;
+  padding-right: 0.3em;
+}
+
+.nav-link {
+  padding: 1em 1.3em !important;
+}
+
+.btn-link {
+  text-decoration: none !important;
+  padding-top: 1em !important;
+}
+
+.card-body .row .col-12 {
+  display: flex;
+  justify-content: center !important;
+}
+
+.card-text-login .row .col-12 input {
+  width: 88%;
+}
+
+.card-text .row .col-12 .row {
+  width: 90%;
+}
+
+.card-text,
+.card-text-login {
+  padding: 1.2em !important;
+}
+
+.btn-success {
+  width: 80% !important;
+}
+small {
+  padding-top: 1em;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.blue {
+  background-color: lightblue;
+}
+.yellow {
+  background-color: lightgoldenrodyellow;
+}
+
+.user_card {
+  margin: 1em 0em 1.5em 0em;
+}
+
+.border-garden {
+  border: 0.13em rgba(0, 0, 0, 0.4) solid !important;
+  border-radius: 0.25em;
+}
+
+/* .custom-select,
+.list-select {
+  padding: 0.2em;
+  border-radius: 0.25em;
+} */
+
+.garden-buttons button,
+.full-name span {
+  margin: 0em 0.7em;
+}
+
+.btn-link:hover btn:hover {
+  color: rgb(17, 50, 12) !important;
+}
+
+.mt2h {
+  margin-top: 2.5em !important;
+}
+
+.garden {
+  background-color: #50372c !important;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png") !important;
+}
+
+.square {
+  /* width: 50vh;
+  height: 50vh; */
+  max-width: 100%;
+}
+
+.plant_small {
+  width: 100%;
+}
+
+.rectangle {
+  width: 100%;
+  /* background-color: yellowgreen; */
+
+  /* background-color: aqua; */
+}
+
+/* .card:hover, */
+/* .navbar:hover, */
+.plant_box {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5em;
+}
+.plant_box:hover {
+  /* background-color: rgba(255, 255, 255, 0.8) !important; */
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center !important;
+}
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly !important;
+}
+
+.space-around > * {
+  padding: 0.1em 0em;
+}
+
+.input-sm {
+  width: 80% !important;
+  text-align: center;
+}
+
+.navbar {
+  margin-bottom: 3.5em;
+}
+.mtn1 {
+  margin-top: -1.5em !important;
+}
+.mtn2 {
+  margin-top: -2em !important;
+}
+
+.table-responsive {
+  max-height: 65vh;
+  /* border-radius: 0.3em !important; */
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.w30 {
+  width: 30% !important;
+  text-align: left !important;
+  padding-left: 2em !important;
+}
+.w50 {
+  width: 50% !important;
+  /* text-align: left !important;
+  padding-left: 2em !important; */
+}
+.w70 {
+  width: 70% !important;
+  text-align: center !important;
+}
+.card {
+  width: 100% !important;
+}
+
+.ml2 {
+  margin-left: 2em !important;
+}
+
+.mr2 {
+  margin-right: 1em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.2em grey;
+  border-radius: 0.4em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5bee5b75;
+  border-radius: 0.4em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5bee5b75;
+}
+
+.dropdown-item {
+  /* background-color: rgba(0, 0, 0, 0.233) !important ; */
+  background-color: #343a41 !important;
+  padding: 0.4em !important;
+}
+
+.dropdown {
+  border-radius: 0.4em !important;
+}
+
+input,
+.loginForm button {
+  margin: 0.8em 0em !important;
+}
+
+.drop_position {
+  padding: 3em;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  border: rgba(255, 255, 255, 0.4) 1px dashed;
+}
+
+.z100 {
+  z-index: 100 !important;
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.rc > img {
+  width: 10px !important;
+}
+
+.img {
+  width: 4% !important;
+}
+
+/*  changes from final touch - without checking if it already exists
+in this file */
+
+.plant {
+  padding: 2em;
+  margin: 1em;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.white-soft {
+  color: rgba(255, 255, 255, 0.712);
+}
+
+.center {
+  display: flex;
+  justify-content: center !important;
+}
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  justify-content: space-between;
+  /* height: 600px;
+  overflow: auto; */
+  width: 100%;
+}
+
+.shape {
+  background-color: #50372c !important;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+
+  border-radius: 0.5em;
+  margin: 0em 2em;
+  /* height: 750px; */
+}
+
+.pink {
+  background-color: pink !important;
+}
+.blue {
+  background-color: lightblue !important;
+}
+
+.dragInGarden > p {
+  font-size: 0.8em;
+}
+.dragInGarden > * {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.left_column {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px !important;
+}
+.right_column {
+  padding-right: 0px !important;
+}
+
+img {
+  width: 125px;
+  height: 75px;
+}
+
+
+
+.w-100 {
+  width: 100% !important;
+}
+
+.cgray {
+  color: rgba(160, 160, 160, 0.7) !important;
+}
+
+input,
+select {
+  text-align: center;
+}
+
+.fdc {
+  flex-direction: column;
+}
+
+.left-column,
+.right_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.left-column > div {
+  padding: 3em !important;
+}
+
+.fdc {
+  flex-direction: column;
+}
+
+
+
+
+.tik {
+  display: flex;
+}
+
+/* //space right */
+.sl {
+  padding-left: 0.5em !important;
+}
+
+.pc_info {
+  padding-left: 1.5em;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {
+  .frameInt {
+    display: flex;
+    flex-direction: column;
+  }
+  .center_column {
+    margin: 2em 0em !important;
+  }
+
+  .left_column {
+    padding-right: 0em;
+  }
+
+  
+} */
