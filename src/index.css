@@ -13,7 +13,6 @@
   display: flex;
   justify-content: space-around;
   border-radius: 0.4em;
-  
 }
 .plant_box:hover {
   /* background-color: rgba(255, 255, 255, 0.8) !important; */
@@ -242,8 +241,6 @@ in this file */
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
-  
-  
 }
 
 img {
@@ -311,7 +308,7 @@ select {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .frameInt {
     display: flex;
     flex-direction: column;
@@ -319,10 +316,7 @@ select {
   .center_column {
     margin: 2em 0em !important;
   }
-
   .left_column {
     padding-right: 0em;
   }
-
-  
-} */
+}

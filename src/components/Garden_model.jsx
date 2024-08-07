@@ -41,7 +41,7 @@ export default function Garden_model() {
   useEffect(() => {
     getAllContainers();
     getAllPlants();
-  }, [user]);
+  }, [allRef]);
 
   function getAllPlants() {
     const allPlantsExtended = allRef?.plantList?.map((plant) => ({
@@ -518,7 +518,6 @@ export default function Garden_model() {
 
           <div className="col-3  left_column p-0  ">
             <Left_Column />
-           
           </div>
 
           <div className="col-6  center  center_column  ">
@@ -527,7 +526,6 @@ export default function Garden_model() {
 
           <div className="col-3  right-column p-0  ">
             <Right_Column />
-            
           </div>
         </div>
       </DndContext>
